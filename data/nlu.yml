@@ -1,0 +1,210 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yes, please
+    - yes, i would
+    - yup
+    - yep
+    - yeah
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - no, thanks
+    - please no
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: vciso
+  examples: |
+    - VCISO
+    - ciso
+    - VCISO service
+    - VCISO services
+    - ciso service
+    - ciso services
+
+- intent: cyber_security
+  examples: |
+    - Cyber Security
+    - cyber security service
+    - cyber security consultation
+    - cyber_security consulting
+    - network service
+    - network consultation
+
+- intent: data_protection_and_privacy
+  examples: |
+    - data protection
+    - data protection service
+    - data protection and privacy
+    - data privacy
+    - data protection consultation
+    - data privacy consulting
+    - data privacy service
+
+- intent: it_audit_services
+  examples: |
+    - IT audit service
+    - audit service
+    - it audit consulting
+    - IT audit
+    - Audit consulting
+    - Audit consultation
+    - IT Auditing
+    - it auditing
+
+- intent: identity_access_management
+  examples: |
+    - identity access management
+    - Identity management
+    - Identity access
+    - access management
+    - identity service
+    - identity access consultation
+    - Access management service
+
+- intent: sec_ops
+  examples: |
+    - security operations
+    - security service
+    - security consulting
+    - secops
+    - Security
+    - Security 
+    
+- intent: out_of_scope
+  examples: |
+    - what is the square root of 5
+    - I want to know weather
+    - what is the meaning of life
+    - fridge isn't Running
+    - my tv is'nt working
+    - I want a pizza
+    - my washing machine isn't working
+    - what year is it
+    - I want to order pizza
+    - what is the weather today
+    - what is the weather
+
+
+- intent: inform
+  examples: |
+    - name is [rajendra](username) email is [rajendra@ysybserzen.com](email-address) phone is [4344432432](phone-number)
+    - my name is [shiva](username) email is [rajendra@gmail.com](email-address) phone is [8934548686](phone-number)
+    - name [surya](username) and email is [rajendra@outlook.com](email-address) phone is [9054347523](phone-number)
+    - i am [venkat](username) email [shiva@aol.com](email-address) and phone [7367543476](phone-number)
+    - this is [vamsi](username) email is [vamsi@wolkensoftware.com](email-address) phone is [6743239876](phone-number)
+    - iam [Rajendra](username) and my email is [shiva@yahoo.com](email-address) and my phone is [6356844532](phone-number)
+    - name [surya](username) email [surya@rediffmail.com](email-address) phone [8745453434](phone-number)
+    - email [mukesh@leo.com](email-address) and phone [7657745567](phone-number) and name [teja](username)
+    - phone [4545343345](phone-number) email [sekhar@tcs.in](email-address) name [ashok](username)
+    - email [tejaswi@infinatesolutions.com](email-address) name [tejaswi](username) phone [7878765634](phone-number)
+    - phone [9088945434](phone-number) name [mastan](username) email [mastan@techwave.in](email-address)
+    - name is [rajendra](username) email [rajendra@gmail.com](email-address) phone [7386528936](phone-number)
+    - [rajendra](username) [rajendra@syberzen.com](email-address) [7386528936](phone-number)
+
+- intent: explain
+  examples: |
+    - why need username
+    - why do need that
+    - why
+    - for what
+    - to do what
+    - why do you need that
+    - why so
+    - why you need mobile number
+    - why mobile
+    - why email
+    - for what purpose
+
+- regex: email-address
+  examples: |
+    - ^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$
+
+- regex: phone-number
+  examples: |
+    - \d{10}

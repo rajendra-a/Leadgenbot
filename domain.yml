@@ -1,0 +1,178 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- out_of_scope
+- cyber_security
+- vciso
+- data_protection_and_privacy
+- it_audit_services
+- identity_access_management
+- sec_ops
+- inform
+- utter_ask_user_form
+- username
+- explain
+- hi
+
+entities:
+- username
+- email-address
+- phone-number
+
+slots:
+  username:
+    type: text
+  email-address:
+    type: text
+  mobile-number:
+    type: text
+
+forms:
+  user_form:
+    username: 
+    - entity: username
+    
+
+responses:
+  utter_greet:
+  - buttons:
+    - payload: /vciso
+      title: vCISO
+    - payload: /cyber_security
+      title: Cyber Security
+    - payload: /data_protection_and_privacy
+      title: Data Protection and Privacy
+    - payload: /it_audit_services
+      title: It Audit Readiness Service
+    - payload: /identity_access_management
+      title: Identity Access management
+    - payload: /sec_ops
+      title: Security Operations
+  text: Hey! I am a bot to provide services from syberzen, Plase select a service
+
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+
+  utter_did_that_help:
+  - text: Did that help you?
+
+  utter_happy:
+  - text: Great, carry on!
+
+  utter_goodbye:
+  - text: Bye
+
+  utter_iamabot:
+  - text: I am a bot, powered by Syberzen.
+
+  utter_cyber_security:
+  - text: We at Syberzen, provide Vulnerability and Penetration Testing (VAPT) service
+      to corporates to help secure gaps of IT ecosystem that can then be used to launch
+      cyber-attack. We follow NIST, OWASP, CERT, NCIIPC, NISPG guidelines and ensure
+      compliance to regulatory standards viz PCI DSS, PHI, SOC 2, HIPAA as well as
+      ISMS by ensuring conformance to ITGC controls. Services offered as part of VAPT
+      offerings are. Application and Infrastructure Vulnerability Assessment. Application
+      and Infrastructure Penetration testing. Secure Code Review d. Infrastructure
+      hardening. Network testing f. Vulnerability advisories. Audit Readiness h. Cloud
+      Security i. Mobile App Vulnerability testing, Database Security testing - Oracle,
+      DB2, Mysql, MS SQL, Big Data Product Security under principles of Security by
+      Design.
+  
+  utter_vciso:
+  - text: We are a specialized firm founded with a passion to help SMBs gain a fighting
+      chance against a dynamic cybersecurity threat environment. Syberzen vCISO services
+      not only include a highly experienced security leader (vCISO), but also security
+      specialists who are needed to execute the security program i.e. security architects,
+      SOC analysts, project managers, etc. You can leverage scalability with our vCISO
+      services to ensure fine balance between security & resilience and the investments
+      spent for this service.
+  
+  utter_data_protection_privacy:
+  - text: We provide services to our clients for discovering sensitive data assets
+      and information classification. We help organizations in addressing privacy
+      risks by leveraging our multidisciplinary approach of identifying and managing
+      the risks associated with personal data. We augment our data privacy offering
+      with our robust data protection tools and technologies to protect personal data
+      or information.
+    
+  utter_it_audit_readiness:
+  - text: Our audit readiness approach has been developed in accordance with International
+      Information Systems Audit Standards e.g ISACA Information Systems Audit Standards
+      and Guidelines. The beginning point of this methodology is to carry out planning
+      activities that are geared towards integrating a Risk Based Audit Approach to
+      the Audit readiness. Our audit readiness service is an examination of the controls
+      within an organizationâ€™s IT infrastructure. During the IT controls audit process,
+      Syberzenâ€™s IT Auditors collect and evaluate evidence of the clientâ€™s information
+      systems controls, policies and procedures, and other related documentation to
+      ensure the availability, confidentiality, and integrity of mission-critical
+      systems.
+  
+  utter_identity_access_management:
+  - text: Syberzen’s Identity and Access Management services enable in the creation
+      of identities for individuals and managing of privilege rights to critical assets
+      based on their roles in the organization. Administrators leverage tools and
+      technologies to track user roles and activities while enforcing policies to
+      govern user access across the enterprise. Single Sign-on and Multi-factor Authentication
+      are the two most common systems used in IDAM.
+  
+  utter_sec_ops:
+  - text: Syberzen has tied up with best of the breed products in this space and will
+      use them on pay-per-use basis based on the need and coverage needed in agreement
+      with clients. Coverage Solutions around anti-ransomware, Email gateway, IPS/IDS,
+      Firewall defense to more advanced areas like Threat Hunting, User Entity Behavior
+      Analysis (UEBA), Response and Remediation, End-Point Detection and Response
+      (EDR), Threat Intelligence and Threat Analytics & predictive engine.
+
+  utter_ask_user_form:
+  - text: |
+        Please provide us user name, email address and phone number 
+        soon we will get in touch with you
+  
+  utter_confirm:
+    - buttons: 
+      - payload: /affirm
+        title: Yes
+      - payload: /deny
+        title: No
+      text: |
+          Please confirm your user name is {username}, email address {email-address} 
+          and phone number {phone-number}
+
+  utter_deny:
+  - text: Seems to be not interested, Thanks for your valuble time
+
+  utter_ask_username:
+  - text: Please provide user name
+
+  utter_explain_username:
+  - text: we need your name to identify
+
+  utter_ask_email_address:
+  - text: Please provide email address
+
+  utter_explain_email:
+  - text: We want to send a email about us to know precisely
+
+  utter_ask_phone_number:
+  - text: Please provide phone number
+
+  utter_explain_phone_nubmer:
+  - text: We can connect in mean time
+  
+  utter_contact_you_soon:
+  - text: Soon we will contact you
+
+
+  actions:
+  - action_send_email
+
+

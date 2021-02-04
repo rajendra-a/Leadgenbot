@@ -1,0 +1,191 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: cyber security happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: cyber_security
+  - action: utter_cyber_security
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - active_loop: null
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_goodbye
+
+- story: vciso happay path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: vciso
+  - action: utter_vciso
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - active_loop: null
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_goodbye
+
+- story: data protection and privacy happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: data_protection_and_privacy
+  - action: utter_data_protection_privacy
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - active_loop: null
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_goodbye
+
+- story: it audit services happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: it_audit_services
+  - action: utter_it_audit_readiness
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - active_loop: null
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_goodbye
+
+- story: identity access and management services happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: identity_access_management
+  - action: utter_identity_access_management
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - active_loop: null
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_goodbye
+
+- story: security operations happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: sec_ops
+  - action: utter_sec_ops
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - active_loop: null
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_goodbye
+
+- story: identity access and management services unhappy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: identity_access_management
+  - action: utter_identity_access_management
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - active_loop: null
+  - action: utter_confirm
+  - intent: deny
+  - action: utter_deny
+
+- story: username interjection
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: identity_access_management
+  - action: utter_identity_access_management
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - slot_was_set:
+    - requested_slot: username
+  - intent: explain
+  - action: utter_explain_username
+  - action: utter_ask_username
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_goodbye
+
+- story: email interjection
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: identity_access_management
+  - action: utter_identity_access_management
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - slot_was_set:
+    - requested_slot: email-address
+  - intent: explain
+  - action: utter_explain_email
+  - action: utter_ask_email
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_goodbye
+
+- story: phone interjection
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: identity_access_management
+  - action: utter_identity_access_management
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - slot_was_set:
+    - requested_slot: phone-number
+  - intent: explain
+  - action: utter_explain_phone
+  - action: utter_ask_phone
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_goodbye
