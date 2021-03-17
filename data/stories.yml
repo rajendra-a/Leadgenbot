@@ -1,33 +1,11 @@
 version: "2.0"
-
 stories:
-
 - story: happy path
   steps:
   - intent: greet
   - action: utter_greet
   - intent: mood_great
   - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
 
 - story: cyber security happy path
   steps:
@@ -42,7 +20,7 @@ stories:
   - action: utter_confirm
   - intent: affirm
   - action: action_send_email
-  - action: utter_goodbye
+  - action: utter_contact_you_soon
 
 - story: vciso happay path
   steps:
@@ -57,7 +35,7 @@ stories:
   - action: utter_confirm
   - intent: affirm
   - action: action_send_email
-  - action: utter_goodbye
+  - action: utter_contact_you_soon
 
 - story: data protection and privacy happy path
   steps:
@@ -72,7 +50,7 @@ stories:
   - action: utter_confirm
   - intent: affirm
   - action: action_send_email
-  - action: utter_goodbye
+  - action: utter_contact_you_soon
 
 - story: it audit services happy path
   steps:
@@ -87,8 +65,8 @@ stories:
   - action: utter_confirm
   - intent: affirm
   - action: action_send_email
-  - action: utter_goodbye
-
+  - action: utter_contact_you_soon
+  
 - story: identity access and management services happy path
   steps:
   - intent: greet
@@ -102,7 +80,7 @@ stories:
   - action: utter_confirm
   - intent: affirm
   - action: action_send_email
-  - action: utter_goodbye
+  - action: utter_contact_you_soon
 
 - story: security operations happy path
   steps:
@@ -117,7 +95,7 @@ stories:
   - action: utter_confirm
   - intent: affirm
   - action: action_send_email
-  - action: utter_goodbye
+  - action: utter_contact_you_soon
 
 - story: identity access and management services unhappy path
   steps:
@@ -150,7 +128,7 @@ stories:
   - action: utter_confirm
   - intent: affirm
   - action: action_send_email
-  - action: utter_goodbye
+  - action: utter_contact_you_soon
 
 - story: email interjection
   steps:
@@ -164,12 +142,12 @@ stories:
   - slot_was_set:
     - requested_slot: email-address
   - intent: explain
-  - action: utter_explain_email
-  - action: utter_ask_email
+  - action: utter_explain_email_address
+  - action: utter_ask_email_address
   - action: utter_confirm
   - intent: affirm
   - action: action_send_email
-  - action: utter_goodbye
+  - action: utter_contact_you_soon
 
 - story: phone interjection
   steps:
@@ -183,9 +161,36 @@ stories:
   - slot_was_set:
     - requested_slot: phone-number
   - intent: explain
-  - action: utter_explain_phone
-  - action: utter_ask_phone
+  - action: utter_explain_phone_nubmer
+  - action: utter_ask_phone_number
   - action: utter_confirm
   - intent: affirm
   - action: action_send_email
-  - action: utter_goodbye
+  - action: utter_contact_you_soon
+  
+- story: Story from Conversation ID 65515bd4376d47dd800c17646fa7cc61
+  steps:
+  - intent: affirm
+  - action: utter_happy
+  - intent: greet
+  - action: utter_greet
+  - intent: cyber_security
+  - action: utter_cyber_security
+  - action: utter_ask_user_form
+  - action: user_form
+  - active_loop: user_form
+  - slot_was_set:
+    - requested_slot: username
+  - slot_was_set:
+    - username: rajendra
+  - slot_was_set:
+    - email-address: rajendra@syberzen.com
+  - slot_was_set:
+    - phone-number: 9839493433 
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_confirm
+  - intent: affirm
+  - action: action_send_email
+  - action: utter_contact_you_soon

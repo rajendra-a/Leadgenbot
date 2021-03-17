@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - good afternoon
@@ -30,7 +28,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -44,7 +41,6 @@ nlu:
     - yup
     - yep
     - yeah
-
 - intent: deny
   examples: |
     - no
@@ -56,7 +52,6 @@ nlu:
     - not really
     - no, thanks
     - please no
-
 - intent: mood_great
   examples: |
     - perfect
@@ -73,7 +68,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -90,14 +84,12 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: vciso
   examples: |
     - VCISO
@@ -106,7 +98,7 @@ nlu:
     - VCISO services
     - ciso service
     - ciso services
-
+    - veeranji
 - intent: cyber_security
   examples: |
     - Cyber Security
@@ -115,7 +107,6 @@ nlu:
     - cyber_security consulting
     - network service
     - network consultation
-
 - intent: data_protection_and_privacy
   examples: |
     - data protection
@@ -125,7 +116,6 @@ nlu:
     - data protection consultation
     - data privacy consulting
     - data privacy service
-
 - intent: it_audit_services
   examples: |
     - IT audit service
@@ -136,7 +126,6 @@ nlu:
     - Audit consultation
     - IT Auditing
     - it auditing
-
 - intent: identity_access_management
   examples: |
     - identity access management
@@ -146,7 +135,6 @@ nlu:
     - identity service
     - identity access consultation
     - Access management service
-
 - intent: sec_ops
   examples: |
     - security operations
@@ -154,8 +142,6 @@ nlu:
     - security consulting
     - secops
     - Security
-    - Security 
-    
 - intent: out_of_scope
   examples: |
     - what is the square root of 5
@@ -169,8 +155,6 @@ nlu:
     - I want to order pizza
     - what is the weather today
     - what is the weather
-
-
 - intent: inform
   examples: |
     - name is [rajendra](username) email is [rajendra@ysybserzen.com](email-address) phone is [4344432432](phone-number)
@@ -185,8 +169,21 @@ nlu:
     - email [tejaswi@infinatesolutions.com](email-address) name [tejaswi](username) phone [7878765634](phone-number)
     - phone [9088945434](phone-number) name [mastan](username) email [mastan@techwave.in](email-address)
     - name is [rajendra](username) email [rajendra@gmail.com](email-address) phone [7386528936](phone-number)
-    - [rajendra](username) [rajendra@syberzen.com](email-address) [7386528936](phone-number)
-
+    - [rajendra](username)   [rajendra@syberzen.com](email-address) [9894598987](phone-number)
+    - [rajendra](username)  [rajendrareddy.akkala@gmail.com](email-address) [9349344398](phone-number)
+    - [rajendra](username)  [rajendra@gmail.com](email-address)  [9845845645](phone-number)
+    - [rajendra](username)   [rajendrareddy.akkala@gmail.com](email-address)  [9878987887](phone-number)
+    - [rajendra](username)  [rajendra@syberzen.com](email-address) [9304998987](phone-number)
+    - [rajendra](username) [rajendra@syberzen.com](email-address) [8934893344](phone-number)
+    - [rajendra](username)  [rajendra@syberzen.com](email-address) [9849589449](phone-number)
+    - [rajendra](username) [rajendrareddy.akkala@gmail.com](email-address)  [9893483489](phone-number)
+    - [rajendra](username)   [rajenrareddy@syberzen.com](email-address) [4834958345943](phone-number)
+    - tarun    [tarun@yahoo.com](email-address)
+    - veeranji [veeranji@gmail.com](email-address)   [8394893987](phone-number)
+    - [rajendra](username)    [veeranji@yahoo.com](email-address)
+    - [rajendra](username)     [sivakrishna@yahoo.com](email-address)   [8348934834](phone-number)
+    - [rajndr](username)
+    - [vamsi](username)   [vamsi@wolkensoftware.com](email-address)   [7394839398](phone-number)
 - intent: explain
   examples: |
     - why need username
@@ -200,11 +197,12 @@ nlu:
     - why mobile
     - why email
     - for what purpose
-
+- intent: nlu_fallback
+  examples: |
+    - tarun
 - regex: email-address
   examples: |
     - ^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$
-
 - regex: phone-number
   examples: |
-    - \d{10}
+    - (\+?\d{1,4}?[-.\s]?)?(\(\d{1,4}?\))?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}

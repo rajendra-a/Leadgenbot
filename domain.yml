@@ -20,27 +20,24 @@ intents:
 - utter_ask_user_form
 - username
 - explain
-- hi
-
+- nlu_fallback
 entities:
 - username
 - email-address
 - phone-number
-
 slots:
-  username:
-    type: text
   email-address:
     type: text
-  mobile-number:
+    influence_conversation: true
+  phone-number:
     type: text
-
-forms:
-  user_form:
-    username: 
-    - entity: username
-    
-
+    influence_conversation: true
+  requested_slot:
+    type: text
+    influence_conversation: true
+  username:
+    type: text
+    influence_conversation: true
 responses:
   utter_greet:
   - buttons:
@@ -56,24 +53,13 @@ responses:
       title: Identity Access management
     - payload: /sec_ops
       title: Security Operations
-  text: Hey! I am a bot to provide services from syberzen, Plase select a service
-
-  utter_cheer_up:
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
-
-  utter_did_that_help:
-  - text: Did that help you?
-
+    text: Hey! I am a bot to provide services from syberzen, Plase select a service
   utter_happy:
   - text: Great, carry on!
-
   utter_goodbye:
   - text: Bye
-
   utter_iamabot:
   - text: I am a bot, powered by Syberzen.
-
   utter_cyber_security:
   - text: We at Syberzen, provide Vulnerability and Penetration Testing (VAPT) service
       to corporates to help secure gaps of IT ecosystem that can then be used to launch
@@ -86,7 +72,6 @@ responses:
       Security i. Mobile App Vulnerability testing, Database Security testing - Oracle,
       DB2, Mysql, MS SQL, Big Data Product Security under principles of Security by
       Design.
-  
   utter_vciso:
   - text: We are a specialized firm founded with a passion to help SMBs gain a fighting
       chance against a dynamic cybersecurity threat environment. Syberzen vCISO services
@@ -95,7 +80,6 @@ responses:
       SOC analysts, project managers, etc. You can leverage scalability with our vCISO
       services to ensure fine balance between security & resilience and the investments
       spent for this service.
-  
   utter_data_protection_privacy:
   - text: We provide services to our clients for discovering sensitive data assets
       and information classification. We help organizations in addressing privacy
@@ -103,7 +87,6 @@ responses:
       the risks associated with personal data. We augment our data privacy offering
       with our robust data protection tools and technologies to protect personal data
       or information.
-    
   utter_it_audit_readiness:
   - text: Our audit readiness approach has been developed in accordance with International
       Information Systems Audit Standards e.g ISACA Information Systems Audit Standards
@@ -115,7 +98,6 @@ responses:
       systems controls, policies and procedures, and other related documentation to
       ensure the availability, confidentiality, and integrity of mission-critical
       systems.
-  
   utter_identity_access_management:
   - text: Syberzen’s Identity and Access Management services enable in the creation
       of identities for individuals and managing of privilege rights to critical assets
@@ -123,7 +105,6 @@ responses:
       technologies to track user roles and activities while enforcing policies to
       govern user access across the enterprise. Single Sign-on and Multi-factor Authentication
       are the two most common systems used in IDAM.
-  
   utter_sec_ops:
   - text: Syberzen has tied up with best of the breed products in this space and will
       use them on pay-per-use basis based on the need and coverage needed in agreement
@@ -131,48 +112,43 @@ responses:
       Firewall defense to more advanced areas like Threat Hunting, User Entity Behavior
       Analysis (UEBA), Response and Remediation, End-Point Detection and Response
       (EDR), Threat Intelligence and Threat Analytics & predictive engine.
-
   utter_ask_user_form:
-  - text: |
-        Please provide us user name, email address and phone number 
-        soon we will get in touch with you
-  
+  - text: "Please provide us user name, email address and phone number \nsoon we will\
+      \ get in touch with you\n"
   utter_confirm:
-    - buttons: 
-      - payload: /affirm
-        title: Yes
-      - payload: /deny
-        title: No
-      text: |
-          Please confirm your user name is {username}, email address {email-address} 
-          and phone number {phone-number}
-
+  - buttons:
+    - payload: /affirm
+      title: Yes
+    - payload: /deny
+      title: No
+    text: "Please confirm your user name is {username}, email address {email-address}\
+      \ \nand phone number {phone-number}\n"
   utter_deny:
   - text: Seems to be not interested, Thanks for your valuble time
-
   utter_ask_username:
   - text: Please provide user name
-
   utter_explain_username:
   - text: we need your name to identify
-
   utter_ask_email_address:
   - text: Please provide email address
-
-  utter_explain_email:
+  utter_explain_email_address:
   - text: We want to send a email about us to know precisely
-
   utter_ask_phone_number:
   - text: Please provide phone number
-
   utter_explain_phone_nubmer:
   - text: We can connect in mean time
-  
   utter_contact_you_soon:
   - text: Soon we will contact you
-
-
-  actions:
-  - action_send_email
-
-
+actions:
+- action_send_email
+forms:
+  user_form:
+    email-address:
+    - entity: email-address
+      type: from_entity
+    phone-number:
+    - entity: phone-number
+      type: from_entity
+    username:
+    - entity: username
+      type: from_entity
